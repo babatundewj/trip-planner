@@ -1,0 +1,14 @@
+<h1>Issue Tracker</h1>
+
+<h3><a href="/issues/newIssue">New Issue</a></h3>
+
+<h3>List of Issues</h3>
+
+<ul>
+
+    {{#each allIssues}}
+    <li>
+        <a href ="/issues/{{_id}}">{{description}}</a>
+    </li>
+    {{/each}}
+</ul>

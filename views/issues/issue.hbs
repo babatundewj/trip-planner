@@ -1,0 +1,12 @@
+<h1>Issue: {{issue.description}}</h1>
+
+<ul>
+    <li>Date Created: {{issue.createdAt}}</li>
+    <li>Status: {{issue.status}}</li>
+    <li>Priority: {{issue.priority}}</li>
+</ul>
+
+<a href="/issues/{{issue._id}}/edit">Edit Issue</a>
+<form method="POST" action="/issues/{{issue._id}}?_method=DELETE">
+  <input type="submit" value="Delete Issue" />
+</form>
