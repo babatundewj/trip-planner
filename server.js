@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { issuesRouter } = require('./controllers/issue.js')
+const { tripRouter, eventRouter } = require('./controllers/tripPlanner.js')
 
 
 /* Step 3
@@ -61,7 +61,8 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/issues', issuesRouter)
+app.use('/', tripRouter)
+app.use('/', eventRouter)
 
 /* Step 5
  *
@@ -69,7 +70,7 @@ app.use('/issues', issuesRouter)
  *
  * NOTE: keep these lines at the bottom of the file 
  */
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 8000 
 
 /* Step 6
  *
