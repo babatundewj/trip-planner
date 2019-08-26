@@ -1,0 +1,18 @@
+<form method="POST" action="/events/{{event._id}}?_method=PUT"/>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{event.name}}"/>
+
+    <label for="venue">Venue</label>
+    <input type="text" name="venue" value="{{event.venue}}"/>
+
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{event.description}}"/>
+
+    <label for="date">Date</label>
+    <input type="datetime-local" name="date" value="{{event.date}}"/>
+
+    <label for="price">price</label>
+    <input type="number" name="price" value="{{event.price}}"/>
+
+    <input type="submit" value="Edit Event"/>
+</form>
