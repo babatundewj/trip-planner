@@ -45,6 +45,10 @@ eventRouter.get('/events', (req, res) => {
   })
 })
 
+eventRouter.get('/events/new', (req,res) => {
+  res.render('events/newEntry.hbs',{})
+})
+
 eventRouter.get('/events/:id', (req,res) => {
   eventsAPI.getEvent(req.params.id).then((event) => {
     res.render('events/event', {event})
@@ -55,10 +59,6 @@ eventRouter.get('/events/:id/edit', (req,res) => {
   eventsAPI.getEvent(req.params.id).then((event) => {
     res.render('events/editEvent',{event})
   })
-})
-
-eventRouter.get('/events/new', (req,res) => {
-  res.render('newEntry.hbs',{})
 })
 
 eventRouter.post('/events', (req, res) => {
