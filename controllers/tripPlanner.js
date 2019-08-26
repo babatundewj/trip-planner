@@ -40,14 +40,14 @@ const eventRouter = express.Router()
 
 // Request handlers for events
 eventRouter.get('/events', (req, res) => {
-  eventsAPI.getAllEvents().then((events) =>{
-    res.send(events)
+  eventsAPI.getAllEvents().then((events) => {
+    res.render('events/events', {events})
   })
 })
 
 eventRouter.get('/events/:id', (req,res) => {
   eventsAPI.getEvent(req.params.id).then((event) => {
-    res.render('events/event',{event})
+    res.render('events/event', {event})
   })
 })
 
@@ -61,29 +61,23 @@ eventRouter.get('/events/new', (req,res) => {
   res.render('newEntry.hbs',{})
 })
 
-// eventRouter.get('/events/:id', (req, res) => {
-//   eventsAPI.getEvent(req.params.id).then(() =>{
-//     res.send('Single Event')
-//   })
-// })
-
 eventRouter.post('/events', (req, res) => {
   eventsAPI.addEvents(req.body).then(() => {
     res.send(200)
   })
 })
 
-// eventRouter.put('/events/:id', (req, res) => {
-//   eventsAPI.updateEvent(req.params.id, req.body).then(() =>{
-//     res.send('Update Event')
-//   })
-// })
+eventRouter.put('/events/:id', (req, res) => {
+  eventsAPI.updateEvent(req.params.id, req.body).then(() =>{
+    res.redirect('/events')
+  })
+})
 
-// eventRouter.delete('/events/delete', (req, res) => {
-//   eventsAPI.deleteEvent().then(() =>{
-//     res.send('Delete Event')
-//   })
-// })
+eventRouter.delete('/events/:id', (req, res) => {
+  eventsAPI.deleteEvent(req.params.id).then(() =>{
+    res.redirect('/events')
+  })
+})
 
 // issuesRouter.get('/:issueId', (req, res) => {
 //   issuesApi.getIssue(req.params.issueId).then((issue) => {

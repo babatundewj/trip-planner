@@ -1,10 +1,11 @@
-const issuesAPI = require('./issues.js')
+// const issuesAPI = require('./issues.js')
+const eventsAPI = require('../models/events.js')
 
 // shopAPI.createShop().then((newShopDocument) => {
 //     console.log(newShopDocument)
 // })
 
-issuesAPI.getAllIssues().then((allIssuesInDocket) => {
+eventsAPI.getAllEvents().then((allIssuesInDocket) => {
     console.log('All documents')
     console.log(allIssuesInDocket)
 })
