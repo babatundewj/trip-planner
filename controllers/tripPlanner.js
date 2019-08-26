@@ -140,5 +140,6 @@ landmarksRouter.get('/landmarks', (req,res) => {
  */
 module.exports = {
   tripRouter,
-  eventRouter
+  eventRouter,
+  landmarksRouter
 }

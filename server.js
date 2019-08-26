@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { tripRouter, eventRouter } = require('./controllers/tripPlanner.js')
+const { tripRouter, eventRouter, landmarksRouter} = require('./controllers/tripPlanner.js')
 
 
 /* Step 3
@@ -63,6 +63,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/', tripRouter)
 app.use('/', eventRouter)
+app.use('/', landmarksRouter)
 
 /* Step 5
  *
