@@ -29,6 +29,7 @@ const foodAPI = require('../models/food.js')
  */
 const tripRouter = express.Router()
 const eventRouter = express.Router()
+const landmarksRouter = express.Router()
 
 
 /* Step 4
@@ -77,6 +78,14 @@ eventRouter.delete('/events/:id', (req, res) => {
   eventsAPI.deleteEvent(req.params.id).then(() =>{
     res.redirect('/events')
   })
+})
+
+
+// Request handlers for landmarks
+landmarksRouter.get('/landmarks', (req,res) => {
+    landmarksAPI.getAllLandmarks().then((landmarks) => {
+        res.send(landmarks)
+    })
 })
 
 // issuesRouter.get('/:issueId', (req, res) => {
