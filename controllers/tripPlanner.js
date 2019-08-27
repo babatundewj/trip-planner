@@ -30,6 +30,7 @@ const foodAPI = require('../models/food.js')
 const tripRouter = express.Router()
 const eventRouter = express.Router()
 const landmarksRouter = express.Router()
+const foodRouter = express.Router()
 
 
 /* Step 4
@@ -64,7 +65,7 @@ eventRouter.get('/events/:id/edit', (req,res) => {
 
 eventRouter.post('/events', (req, res) => {
   eventsAPI.addEvents(req.body).then(() => {
-    res.send(200)
+    res.redirect('/events')
   })
 })
 
@@ -84,62 +85,88 @@ eventRouter.delete('/events/:id', (req, res) => {
 // Request handlers for landmarks
 landmarksRouter.get('/landmarks', (req,res) => {
     landmarksAPI.getAllLandmarks().then((landmarks) => {
-        res.send(landmarks)
+        res.render('landmarks/landmarks',{landmarks})
     })
 })
 
-// issuesRouter.get('/:issueId', (req, res) => {
-//   issuesApi.getIssue(req.params.issueId).then((issue) => {
-//     res.render('issues/issue',{issue})
-//   })
-// })
+landmarksRouter.get('/landmarks/new', (req,res) => {
+  res.render('landmarks/newEntry', {})
+})
 
-// issuesRouter.get('/:issueId/edit', (req, res) => {
-//   issuesApi.getIssue(req.params.issueId).then((issue) => {
-//     res.render('issues/editIssueForm',{issue})
-//   })
-// })
+landmarksRouter.get('/landmarks/:id', (req,res) => {
+  landmarksAPI.getLandmark(req.params.id).then((landmark) => {
+    res.render('landmarks/landmark',{landmark})
+  })
+})
 
-// issuesRouter.put('/:issueId', (req,res) => {
-//   // console.log(req.params.issueId)
-//   // console.log(req.body)
-//   // issuesApi.updateIssue(req.params.issueId, req.body).then(
-//   //   () => {res.redirect(`/issues`)}
-//   // )
+landmarksRouter.get('/landmarks/:id/edit', (req,res) => {
+  landmarksAPI.getLandmark(req.params.id).then((landmark) => {
+    res.render('landmarks/editEntry',{landmark})
+  })
+})
 
-//   console.log(req.params.issueId)
-//   console.log(req.body)
-//   issuesApi.updateIssue(req.params.issueId, req.body)
-//   .then( () => res.redirect(`/issues`))
-// })
+landmarksRouter.post('/landmarks', (req,res) => {
+  landmarksAPI.addLandmark(req.body).then(() => {
+    res.redirect('/landmarks')
+  })
+})
 
-// issuesRouter.post('/', (req,res) => {
-//   issuesApi.addNewIssue(req.body)
-//   .then(res.redirect('/issues'))
-// })
+landmarksRouter.put('/landmarks/:id', (req, res) => {
+  landmarksAPI.updateLandmark(req.params.id, req.body).then(() =>{
+    res.redirect('/landmarks')
+  })
+})
 
-// issuesRouter.delete('/:issueId', (req,res) => {
-//   issuesApi.deleteIssue(req.params.issueId).then(res.redirect('/issues'))
-  
-// })
+landmarksRouter.delete('/landmarks/:id', (req, res) => {
+  landmarksAPI.deleteLandmark(req.params.id).then(() =>{
+    res.redirect('/landmarks')
+  })
+})
 
+// Request handlers for foods
+foodRouter.get('/foods', (req,res) => {
+  foodAPI.getAllDining().then((foods) => {
+      res.render('foods/foods',{foods})
+  })
+})
 
+foodRouter.get('/foods/new', (req,res) => {
+  res.render('foods/newEntry', {})
+})
 
+foodRouter.get('/foods/:id', (req,res) => {
+  foodAPI.getDining(req.params.id).then((food) => {
+    res.render('foods/food',{food})
+  })
+})
 
+foodRouter.get('/foods/:id/edit', (req,res) => {
+  foodAPI.getDining(req.params.id).then((food) => {
+    res.render('foods/editEntry',{food})
+  })
+})
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
+foodRouter.post('/foods', (req,res) => {
+  foodAPI.addDining(req.body).then(() => {
+    res.redirect('/foods')
+  })
+})
 
+foodRouter.put('/foods/:id', (req, res) => {
+  foodAPI.updateDining(req.params.id, req.body).then(() =>{
+    res.redirect('/foods')
+  })
+})
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+foodRouter.delete('/foods/:id', (req, res) => {
+  foodAPI.deleteDining(req.params.id).then(() =>{
+    res.redirect('/foods')
+  })
+})
+
 module.exports = {
   tripRouter,
   eventRouter,
-  landmarksRouter
+  landmarksRouter,
+  foodRouter
 }

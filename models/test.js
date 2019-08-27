@@ -1,26 +1,21 @@
 // const issuesAPI = require('./issues.js')
 const eventsAPI = require('../models/events.js')
+const landmarksAPI = require('../models/landmarks.js')
 
 // shopAPI.createShop().then((newShopDocument) => {
 //     console.log(newShopDocument)
 // })
 
-eventsAPI.getAllEvents().then((allIssuesInDocket) => {
-    console.log('All documents')
-    console.log(allIssuesInDocket)
+// eventsAPI.getAllEvents().then((allIssuesInDocket) => {
+//     console.log('All documents')
+//     console.log(allIssuesInDocket)
+// })
+
+landmarksAPI.getAllLandmarks().then((allLandmarks) => {
+    console.log('All landmarks')
+    console.log(allLandmarks)
 })
 
-// let sampleObject = 
-//     { _id: 5d5c2db8dd5bf87b6926b335,
-//     description: 'Finish Assignment',
-//     createdAt: 2019-08-20,
-//     status: 'In progress',
-//     priority: 'High',
-//     __v: 0 }
-//     issuesAPI.updateIssue(5d5c2db8dd5bf87b6926b335).then((allIssuesInDocket) => {
-//         console.log('All documents')
-//         console.log(allIssuesInDocket)
-//     })
 
 // issuesAPI.deleteManyIssues({description: null}).then((allIssuesInDocket) => {
 //     console.log('All documents')
