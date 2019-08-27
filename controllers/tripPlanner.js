@@ -18,6 +18,7 @@ const express = require('express')
 const landmarksAPI = require('../models/landmarks.js')
 const eventsAPI = require('../models/events.js')
 const foodAPI = require('../models/food.js')
+const tripAPI = require('../models/trip.js')
 
 /* Step 3 
  * 

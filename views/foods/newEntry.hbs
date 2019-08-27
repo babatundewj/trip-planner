@@ -19,10 +19,18 @@
     <label for="cuisine">Cuisine</label>
     <input type="text" name="cuisine"/>
 
-    <label for="venue">Venue Type</label>
-    <input type="string" name="venueType"/>
+    {{!-- <label for="venue">Venue Type</label>
+    <input type="string" name="venueType"/> --}}
 
-    <label for="price">price</label>
+    <label for="venue">Venue Type</label>
+    <select name="venueType">
+        <option value="Food Truck">Food Truck</option>
+        <option value="Fast Food">Fast Food</option>
+        <option value="Fast Casual">Fast Casual</option>
+        <option value="Dine-in Restaurant">Dine-in Restaurant</option>
+    </select>
+
+    <label for="price">Price</label>
     <input type="number" name="price"/>
 
     <input type="submit" value="Create Food"/>

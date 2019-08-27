@@ -23,6 +23,7 @@ const EventSchema = new mongoose.Schema({
     description: String,
     date: Date,
     price: Number,
+    parentId: mongoose.Schema.Types.ObjectId
 })
 
 /* Step 3

@@ -1,6 +1,5 @@
-// const issuesAPI = require('./issues.js')
-const eventsAPI = require('../models/events.js')
 const landmarksAPI = require('../models/landmarks.js')
+const tripAPI = require('../models/trip.js')
 
 // shopAPI.createShop().then((newShopDocument) => {
 //     console.log(newShopDocument)
@@ -13,6 +12,11 @@ const landmarksAPI = require('../models/landmarks.js')
 
 landmarksAPI.getAllLandmarks().then((allLandmarks) => {
     console.log('All landmarks')
+    console.log(allLandmarks)
+})
+
+tripAPI.getAllTrips().then((allLandmarks) => {
+    console.log('All trips')
     console.log(allLandmarks)
 })
 

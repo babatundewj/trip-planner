@@ -28,6 +28,7 @@ const FoodSchema = new mongoose.Schema({
     cuisine: String,
     venueType: String,
     price: Number,
+    // parentId: mongoose.Schema.Types.ObjectId
 })
 
 /* Step 3
