@@ -1,0 +1,29 @@
+<form method="POST" action="/foods/{{food._id}}?_method=PUT"/>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{food.name}}"/>
+
+<address>
+    <label for="street">Street</label>
+    <input type="text" name="address.street" value="{{food.address.street}}"/>
+
+    <label for="city">City</label>
+    <input type="text" name="address.city" value="{{food.address.city}}"/>
+
+    <label for="state">State</label>
+    <input type="text" name="address.state" value="{{food.address.zip}}"/>
+
+    <label for="zip">Zip</label>
+    <input type="number" name="address.zip" value="{{food.address.zip}}"/>
+</address>
+
+    <label for="cuisine">Cuisine</label>
+    <input type="text" name="cuisine" value="{{food.cuisine}}"/>
+
+    <label for="venue">Venue Type</label>
+    <input type="text" name="venueType" value="{{food.venueType}}"/>
+
+    <label for="price">Price</label>
+    <input type="number" name="price" value="{{food.price}}"/>
+
+    <input type="submit" value="Edit Food"/>
+</form>
