@@ -1,0 +1,15 @@
+
+<h1>Trip Planner</h1>
+
+<h3><a href="/foods/new">New Dining</a></h3>
+
+<h3>List of Places to Eat</h3>
+
+<ul>
+
+    {{#each foods}}
+    <li>
+        <a href ="/foods/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>

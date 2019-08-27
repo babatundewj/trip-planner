@@ -1,0 +1,15 @@
+
+<h1>Trip Planner</h1>
+
+<h3><a href="/events/new">New Event</a></h3>
+
+<h3>List of Issues</h3>
+
+<ul>
+
+    {{#each events}}
+    <li>
+        <a href ="/events/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>

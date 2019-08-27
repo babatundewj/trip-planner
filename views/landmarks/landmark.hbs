@@ -1,0 +1,16 @@
+<h1>Attraction: {{landmark.name}}</h1>
+
+<ul>
+    <li>Address: 
+      <address>
+          {{landmark.address.street}}, {{landmark.address.city}}, {{landmark.address.state}}, {{landmark.address.zip}}
+      </address>
+    </li>
+    <li>Description: {{landmark.description}}</li>
+    <li>Price: {{landmark.price}}</li>
+</ul>
+
+<a href="/landmarks/{{landmark._id}}/edit">Edit Landmark</a>
+<form method="POST" action="/landmarks/{{landmark._id}}?_method=DELETE">
+  <input type="submit" value="Delete Landmark" />
+</form>

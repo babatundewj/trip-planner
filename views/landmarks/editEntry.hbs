@@ -1,0 +1,26 @@
+<form method="POST" action="/landmarks/{{landmark._id}}?_method=PUT"/>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{landmark.name}}"/>
+
+<address>
+    <label for="address.street">Address</label>
+    <input type="text" name="address.street" value="{{landmark.address.street}}"/>
+
+    <label for="address.city">City</label>
+    <input type="text" name="address.city" value="{{landmark.address.city}}"/>
+
+    <label for="address.state">State</label>
+    <input type="text" name="address.state" value="{{landmark.address.state}}"/>
+
+    <label for="address.zip">ZIP Code</label>
+    <input type="text" name="address.zip" value="{{landmark.address.zip}}"/>
+</address>
+
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{landmark.description}}"/>
+
+    <label for="price">Price</label>
+    <input type="number" name="price" value="{{landmark.price}}"/>
+
+    <input type="submit" value="Edit Landmark"/>
+</form>

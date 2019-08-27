@@ -1,0 +1,18 @@
+<h1>{{food.name}}</h1>
+
+
+<ul>
+    <li>Address: 
+      <address>
+          {{food.address.street}}, {{food.address.city}}, {{food.address.state}}, {{food.address.zip}}
+      </address>
+    </li>
+    <li>Cuisine: {{food.cuisine}}</li>
+    <li>Venue Type: {{food.venueType}}</li>
+    <li>Price: {{food.price}}</li>
+</ul>
+
+<a href="/foods/{{food._id}}/edit">Edit Food</a>
+<form method="POST" action="/foods/{{food._id}}?_method=DELETE">
+  <input type="submit" value="Delete Food" />
+</form>
