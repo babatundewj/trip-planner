@@ -42,6 +42,11 @@ const foodRouter = express.Router()
 
 
 // Request handlers for events
+
+eventRouter.get('/', (req,res) => {
+  res.render('home',{})
+})
+
 eventRouter.get('/events', (req, res) => {
   eventsAPI.getAllEvents().then((events) => {
     res.render('events/events', {events})

@@ -1,5 +1,7 @@
 body {
-    background-color: cyan;
+    background-image: url('./atlanta.jpeg');
+    background-size: 100%;
+    
 }
 
 h1 {
@@ -9,12 +11,23 @@ h1 {
 a {
     text-decoration: none;
 }
-
+ul {
+    background-color: rgba(30,30,30,.7)
+}
 ul li {
     text-decoration: none;
+    color: white;
+}
+
+.linklist {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(30,30,30,.7)
+
 }
 
 form {
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(30,30,30,.7);
+    color: white;
 }
