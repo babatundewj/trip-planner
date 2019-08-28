@@ -23,7 +23,7 @@ const EventSchema = new mongoose.Schema({
     description: String,
     date: Date,
     price: Number,
-    parentId: mongoose.Schema.Types.ObjectId
+    // parentId: mongoose.Schema.Types.ObjectId
 })
 
 /* Step 3
@@ -32,6 +32,7 @@ const EventSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
+
 const EventCollection = mongoose.model('Events', EventSchema)
 
 /* Step 4
@@ -60,12 +61,12 @@ function deleteEvent(eventId) {
     return EventCollection.findByIdAndDelete(eventId)
 }
 
-
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
+
 module.exports = {
   addEvents,
   deleteEvent,

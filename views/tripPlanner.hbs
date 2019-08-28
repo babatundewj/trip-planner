@@ -1,0 +1,30 @@
+
+<h1>Trip Planner</h1>
+
+<h3>List of Events</h3>
+<h3><a href="/events/new">New Event</a></h3>
+
+<ul>
+
+    {{#each events}}
+    <li>
+        <a href ="/events/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>
+
+<h3>List of Landmarks</h3>
+<h3><a href="/landmarks/new">New Landmark</a></h3>
+
+<ul>
+
+    {{#each landmarks}}
+    <li>
+        <a href ="/landmarks/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>
+
+<h3>List of Food</h3>
+<h3><a href="/food/new">New Food</a></h3>
+
